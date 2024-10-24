@@ -21,8 +21,8 @@ const Homework = () => {
         The standard Lorem Ipsum passage
         </p>
         <p className='w-[312px] text-[10px] font-[300] font-openSans leading-[24.38px] text-dark'>
-          "Lorem ipsum dolor sit amet, consectetur   adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        &quot;Lorem ipsum dolor sit amet, consectetur   adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        &quot;Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         </p>
 
       </div>
