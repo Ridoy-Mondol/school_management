@@ -53,13 +53,13 @@ const MenuList = [
         id: 6,
         name: 'Solution',
         image: solutionIcon,
-        link: '#',
+        link: '/list/solution',
     },
     {
         id: 7,
         name: 'Result',
         image: resultIcon,
-        link: '#',
+        link: '/list/result',
     },
     {
         id: 8,

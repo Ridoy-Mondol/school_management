@@ -23,6 +23,7 @@ module.exports = {
         montserrat: ['Montserrat', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
         openSans: ['Open Sans', 'sans-serif'],
+        roboto: ['Roboto', 'sans-serif'],
       },
       boxShadow: {
         'custom-bottom': '0 4px 0 #131F73',

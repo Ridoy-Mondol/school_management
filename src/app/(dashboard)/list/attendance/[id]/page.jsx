@@ -29,9 +29,9 @@ export async function generateStaticParams() {
 const AttendanceSheet = ({params}) => {
     const { id } = params;
   return (
-    <div className='h-[100vh] w-[100%]'>
+    <div className='h-[100vh] w-[100%] pr-[40px]'>
 
-       <ListHeader image = {attendanceIcon} title = 'Attendance Sheet'/>
+       <ListHeader image = {attendanceIcon} title = 'ATTENDANCE SHEET'/>
         
        <div className='bg-[#14238A]/80 w-[100%] h-[67px] px-[20px] border-[1px] border-dark flex items-center justify-between mt-[2px]'>
           <p className='text-white text-[20px] font-[600] font-openSans leading-[27.24px]'>Class:4</p>
