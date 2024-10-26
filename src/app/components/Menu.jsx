@@ -65,7 +65,7 @@ const MenuList = [
         id: 8,
         name: 'Class Schedule',
         image: classScheduleIcon,
-        link: '#',
+        link: 'schedule',
     },
     {
         id: 9,
