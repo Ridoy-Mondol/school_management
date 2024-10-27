@@ -12,7 +12,7 @@ const Homework = () => {
       <ListHeader image={homeworkIcon} title="HOME WORK" />
 
       <div className='flex flex-col items-center'>
-        <Link href = '/list/homework/create' className='w-[173px] h-[72px] bg-[#1A1F42] rounded-[26px] flex items-center justify-between px-[30px] mt-[110px]'>
+        <Link href = '/teacher/homework/create' className='w-[173px] h-[72px] bg-[#1A1F42] rounded-[26px] flex items-center justify-between px-[30px] mt-[110px]'>
             <Image src={plusIcon} alt='plusIcon' className='w-[20px] h-[20px] cursor-pointer' />
             <p  className='text-white text-[20px] font-[800] font-montserrat leading-[24.38px]'>Create</p>
         </Link>
