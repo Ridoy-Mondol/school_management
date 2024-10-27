@@ -8,6 +8,7 @@ import polygon from '@/app/assets/polygon.svg'
 import DropdownButton from '@/app/components/DropdownButton'
 import { useSpring, animated } from '@react-spring/web';
 import Notice from '@/app/components/Notice'
+import Form from '@/app/components/Form'
 
 
 const Create = () => {
@@ -67,7 +68,7 @@ const Create = () => {
             <DropdownButton text= "Point" />
             <DropdownButton text= "Due Date" />
         </div>
-        <form className='w-[80%] ml-[60px] mt-[20px] p-[20px] border-[1px] border-dark shadow-[23px_23px_0px_#00000040]'>
+        {/* <form className='w-[80%] ml-[60px] mt-[20px] p-[20px] border-[1px] border-dark shadow-[23px_23px_0px_#00000040]'>
         <input
           type="text"
           className="w-[100%] h-[66px] bg-[#CCCCCC] px-[10px] text-[36px] text-dark/80 font-[600] font-montagu leading-[46.15px] focus:outline-none placeholder:text-[36px] placeholder:font-[600] placeholder:font-montagu placeholder:leading-[46.15px]
@@ -81,7 +82,10 @@ const Create = () => {
           placeholder:text-dark"
           placeholder="Instruction (Optional)"
         />
-        </form>
+        </form> */}
+
+        <Form />
+
       </div>
       </div>
 

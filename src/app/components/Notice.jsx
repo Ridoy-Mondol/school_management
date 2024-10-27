@@ -35,7 +35,7 @@ const Notice = () => {
                     <p className='w-[174px] h-[50px] bg-blue font-[800] font-openSans text-[16px] leading-[21.79px] text-white flex items-center justify-center'>{item.date}</p>
                     <p className='w-[174px] h-[50px] bg-blue font-[800] font-openSans text-[16px] leading-[21.79px] text-white flex items-center justify-center'>{item.year}</p>
                     </div>
-                    <div className='h-[122px] w-[100%] bg-[#DDDEEE] pt-[23px] pl-[32px]'>
+                    <div className='h-[122px] w-[100%] bg-[#DDDEEE] py-[23px] pl-[32px] flex items-center'>
                         <p className='font-[400] font-openSans text-[24px] leading-[32.68px] text-dark'>{item.title}</p>
                     </div>
                 </div>

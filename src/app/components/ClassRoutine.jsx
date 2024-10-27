@@ -65,7 +65,7 @@ const Data = [
 ]
 const ClassRoutine = () => {
  return (
- <div className="w-[100%] px-[18px]">
+ <div className="w-[100%]">
   <div className=" w-full p-2 shadow-[inset_10px_10px_4px_20px_#00000040] pb-[15px] pr-[15px] my-[127px] bg-white overflow-hidden flex flex-col">
     {Data.map((item) => (
       <div className="flex items-center justify-between" key={item.id}>
@@ -82,10 +82,6 @@ const ClassRoutine = () => {
         ))}
       </div>
     ))}
-  </div>
- 
-  <div className='mb-[5px]'>
-  <Notice />
   </div>
 
 </div>

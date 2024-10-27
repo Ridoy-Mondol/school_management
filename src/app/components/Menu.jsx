@@ -16,79 +16,79 @@ import settingIcon from '@/app/assets/settings.svg'
 import chevron from '@/app/assets/chevron.svg'
 import Link from 'next/link'
 
-const MenuList = [
-    {
-        id: 1,
-        name: 'Teachers',
-        image: TeacherIcon,
-        icon: chevron,
-        link: '#',
-    },
-    {
-        id: 2,
-        name: 'Dashboard',
-        image: dashboardIcon,
-        link: '#',
-    },
-    {
-        id: 3,
-        name: 'Student',
-        image: studentIcon,
-        icon: chevron,
-        link: '#',
-    },
-    {
-        id: 4,
-        name: 'Attendance',
-        image: attendanceIcon,
-        link: '/list/attendance',
-    },
-    {
-        id: 5,
-        name: 'Homework',
-        image: homeworkIcon,
-        link: '/list/homework',
-    },
-    {
-        id: 6,
-        name: 'Solution',
-        image: solutionIcon,
-        link: '/list/solution',
-    },
-    {
-        id: 7,
-        name: 'Result',
-        image: resultIcon,
-        link: '/list/result',
-    },
-    {
-        id: 8,
-        name: 'Class Schedule',
-        image: classScheduleIcon,
-        link: 'schedule',
-    },
-    {
-        id: 9,
-        name: 'Study Material',
-        image: studyMaterialIcon,
-        link: '#',
-    },
-    {
-        id: 10,
-        name: 'Account',
-        image: accountIcon,
-        icon: chevron,
-        link: '#',
-    },
-    {
-        id: 11,
-        name: 'Settings',
-        image: settingIcon,
-        link: '#',
-    },
-]
+// const MenuList = [
+//     {
+//         id: 1,
+//         name: 'Teachers',
+//         image: TeacherIcon,
+//         icon: chevron,
+//         link: '#',
+//     },
+//     {
+//         id: 2,
+//         name: 'Dashboard',
+//         image: dashboardIcon,
+//         link: '#',
+//     },
+//     {
+//         id: 3,
+//         name: 'Student',
+//         image: studentIcon,
+//         icon: chevron,
+//         link: '#',
+//     },
+//     {
+//         id: 4,
+//         name: 'Attendance',
+//         image: attendanceIcon,
+//         link: '/teacher/attendance',
+//     },
+//     {
+//         id: 5,
+//         name: 'Homework',
+//         image: homeworkIcon,
+//         link: '/teacher/homework',
+//     },
+//     {
+//         id: 6,
+//         name: 'Solution',
+//         image: solutionIcon,
+//         link: '/teacher/solution',
+//     },
+//     {
+//         id: 7,
+//         name: 'Result',
+//         image: resultIcon,
+//         link: '/teacher/result',
+//     },
+//     {
+//         id: 8,
+//         name: 'Class Schedule',
+//         image: classScheduleIcon,
+//         link: '/teacher/schedule',
+//     },
+//     {
+//         id: 9,
+//         name: 'Study Material',
+//         image: studyMaterialIcon,
+//         link: '/teacher/studymaterial',
+//     },
+//     {
+//         id: 10,
+//         name: 'Account',
+//         image: accountIcon,
+//         icon: chevron,
+//         link: '#',
+//     },
+//     {
+//         id: 11,
+//         name: 'Settings',
+//         image: settingIcon,
+//         link: '#',
+//     },
+// ]
 
-const Menu = () => {
+const Menu = ({ MenuList }) => {
   return (
     <div className='w-[386px] flex flex-col'>
         {/* top red component */}
