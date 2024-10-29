@@ -9,11 +9,135 @@ import DropdownButton from '@/app/components/DropdownButton'
 import { useSpring, animated } from '@react-spring/web';
 import Notice from '@/app/components/Notice'
 import Form from '@/app/components/Form'
+import CalendarComponent from '@/app/components/Calender'
+
+const subjects = [
+  { 
+    id: 1, 
+    name: 'Bangla' 
+  },
+  { 
+    id: 2, 
+    name: 'English' 
+  },
+  { 
+    id: 3, 
+    name: 'Math' 
+  },
+  { 
+    id: 4, 
+    name: 'Science' 
+  },
+  { 
+    id: 5, 
+    name: 'Biology' 
+  },
+  { 
+    id: 6, 
+    name: 'Chemistry' 
+  },
+  { 
+    id: 7, 
+    name: 'Islam' 
+  },
+  { 
+    id: 8, 
+    name: 'Physics' 
+  }
+];
+
+
+const studentClass = [
+  {
+    id: 1,
+    name: 'One'
+  },
+  {
+    id: 2,
+    name: 'Two'
+  },
+  {
+    id: 3,
+    name: 'Three'
+  },
+  {
+    id: 4,
+    name: 'Four'
+  },
+  {
+    id: 5,
+    name: 'Five'
+  },
+  {
+    id: 6,
+    name: 'Six'
+  },
+  {
+    id: 7,
+    name: 'Seven'
+  },
+  {
+    id: 8,
+    name: 'Eight'
+  },
+  {
+    id: 9,
+    name: 'Nine'
+  },
+  {
+    id: 10,
+    name: 'Ten'
+  },
+]
+
+const studentPoints = [
+  {
+    id: 1,
+    name: 10
+  },
+  {
+    id: 2,
+    name: 20
+  },
+  {
+    id: 3,
+    name: 30
+  },
+  {
+    id: 4,
+    name: 40
+  },
+  {
+    id: 5,
+    name: 50
+  },
+  {
+    id: 6,
+    name: 60
+  },
+  {
+    id: 7,
+    name: 70
+  },
+  {
+    id: 8,
+    name: 80
+  },
+  {
+    id: 9,
+    name: 90
+  },
+  {
+    id: 10,
+    name: 100
+  },
+]
 
 
 const Create = () => {
   const [open, setOpen] = useState(false);
   const [task, setTask] = useState('');
+
   const animation = useSpring({
     height: open ? '11rem' : '0rem',
     opacity: open ? 1 : 0,
@@ -54,6 +178,7 @@ const Create = () => {
               ))}
           </ul>
          </animated.div>
+
         </div>
         <Image src={crossIcon} alt='crossIcon' className='w-[14.24px] h-[14.24px] cursor-pointer' />
       </div>
@@ -63,10 +188,10 @@ const Create = () => {
         <p className='text-[24px] text-[#716D6D] font-[500] font-montserrat leading-[29.26px] my-[30px] ml-[27px]'>For</p>
         {/* dropdown buttons */}
         <div className='w-[80%] ml-[60px] flex flex-wrap justify-between gap-[20px]'>
-            <DropdownButton text= "Bangla" />
-            <DropdownButton text= "Student" />
-            <DropdownButton text= "Point" />
-            <DropdownButton text= "Due Date" />
+            <DropdownButton text= "Bangla" data = {subjects} />
+            <DropdownButton text= "Student" data = {studentClass} />
+            <DropdownButton text= "Point" data = {studentPoints} />
+            <DropdownButton text= "Due Date" data = "" CalendarComponent={<CalendarComponent />} />
         </div>
         {/* <form className='w-[80%] ml-[60px] mt-[20px] p-[20px] border-[1px] border-dark shadow-[23px_23px_0px_#00000040]'>
         <input

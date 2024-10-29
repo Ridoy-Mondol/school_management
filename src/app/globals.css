@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,3 +8,85 @@
   clip-path: polygon(0 0, 100% 0, 100% 100%, 30% 100%);
   clip-path: polygon(0 100%, 15% 0, 100% 0, 100% 100%);
 }
+
+
+
+
+
+/* CalendarStyles */
+
+/* Main calendar wrapper */
+.react-calendar {
+  width: 392px!important;
+  margin-top: 0.5rem!important;
+  background-color: #F5F5F5; 
+  border: 1px solid transparent;
+  border-image-source: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  border-image-slice: 1;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0px 1px 2px 0px #000E3340;
+}
+
+/* Calendar header/navigation */
+.react-calendar__navigation button {
+  color: #141414!important;
+  font-weight: 700!important;
+  font-size: 1rem!important;
+  line-height: 1.5rem!important;
+}
+
+/* .react-calendar__navigation button:hover {
+  background-color: red!important; 
+} */
+
+.react-calendar__navigation button.react-calendar_navigation_arrow.react-calendar_navigation_prev2-button {
+  display: none!important; 
+}
+
+
+/* Weekday labels */
+.react-calendar__month-view__weekdays {
+font-weight: 500!important;
+line-height: 18px!important;
+text-align: center!important;
+color: #1F1F1F!important;
+font-family: 'Lexend', sans-serif!important;
+text-decoration: none!important;
+}
+
+.react-calendar__month-view__weekdays__weekday {
+  padding: 0.5rem;
+  text-align: center;
+  text-decoration: none!important;
+}
+
+/* Individual date tiles */
+.react-calendar__tile {
+  text-align: center;
+  padding: 13px 20px;
+  background-color: #FFFFFF!important;
+  border-radius: 6px;
+  transition: background-color 0.2s;
+  box-shadow: 0px 1px 1px 0px #000E330D!important;
+  text-decoration: none!important;
+}
+
+.react-calendar__tile:enabled:hover {
+  background-color: #e0f2fe; /* Light blue on hover */
+}
+
+.react-calendar__tile--active {
+  background-color: #0047FF!important;
+  color: #FFFFFF;
+}
+
+.react-calendar__tile--active:enabled:hover {
+  background-color: red!important;
+}
+
+.react-calendar__tile--now {
+  border: 1px solid #3b82f6;
+}
+
+
