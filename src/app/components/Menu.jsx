@@ -1,94 +1,116 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import Image from 'next/image'
 import img from '@/app/assets/Rectangle.png'
-import menuBar from '@/app/assets/menu-bar.svg'
-import TeacherIcon from '@/app/assets/user.svg'
-import dashboardIcon from '@/app/assets/dashboard.svg'
 import studentIcon from '@/app/assets/student.svg'
-import attendanceIcon from '@/app/assets/attendance.svg'
-import homeworkIcon from '@/app/assets/Homework.svg'
-import solutionIcon from '@/app/assets/solution.svg'
-import resultIcon from '@/app/assets/result.svg'
-import classScheduleIcon from '@/app/assets/schedule.svg'
-import studyMaterialIcon from '@/app/assets/material.svg'
-import accountIcon from '@/app/assets/account.svg'
-import settingIcon from '@/app/assets/settings.svg'
-import chevron from '@/app/assets/chevron.svg'
+import menuBar from '@/app/assets/menu-bar.svg'
 import Link from 'next/link'
+import { useSpring, animated } from '@react-spring/web';
+import chevron from '@/app/assets/chevron.svg'
+import { useRouter } from 'next/navigation'
 
-// const MenuList = [
-//     {
-//         id: 1,
-//         name: 'Teachers',
-//         image: TeacherIcon,
-//         icon: chevron,
-//         link: '#',
-//     },
-//     {
-//         id: 2,
-//         name: 'Dashboard',
-//         image: dashboardIcon,
-//         link: '#',
-//     },
-//     {
-//         id: 3,
-//         name: 'Student',
-//         image: studentIcon,
-//         icon: chevron,
-//         link: '#',
-//     },
-//     {
-//         id: 4,
-//         name: 'Attendance',
-//         image: attendanceIcon,
-//         link: '/teacher/attendance',
-//     },
-//     {
-//         id: 5,
-//         name: 'Homework',
-//         image: homeworkIcon,
-//         link: '/teacher/homework',
-//     },
-//     {
-//         id: 6,
-//         name: 'Solution',
-//         image: solutionIcon,
-//         link: '/teacher/solution',
-//     },
-//     {
-//         id: 7,
-//         name: 'Result',
-//         image: resultIcon,
-//         link: '/teacher/result',
-//     },
-//     {
-//         id: 8,
-//         name: 'Class Schedule',
-//         image: classScheduleIcon,
-//         link: '/teacher/schedule',
-//     },
-//     {
-//         id: 9,
-//         name: 'Study Material',
-//         image: studyMaterialIcon,
-//         link: '/teacher/studymaterial',
-//     },
-//     {
-//         id: 10,
-//         name: 'Account',
-//         image: accountIcon,
-//         icon: chevron,
-//         link: '#',
-//     },
-//     {
-//         id: 11,
-//         name: 'Settings',
-//         image: settingIcon,
-//         link: '#',
-//     },
-// ]
+
+const teacherDropdown = [
+  {
+    id: 1,
+    name: 'All Teachers',
+    link: '/teacher/allteacher',
+  },
+  {
+    id: 2,
+    name: 'Add Teachers',
+    link: '/teacher/addteacher',
+  },
+]
+
+const studentDropdown = [
+  {
+    id: 1,
+    name: 'All Students',
+    link: '/teacher/allstudent',
+  },
+  {
+    id: 2,
+    name: 'Add Students',
+    link: '/teacher/addstudent',
+  },
+  {
+    id: 3,
+    name: 'Students Promotion',
+    link: '/teacher/studentpromotion',
+  }
+]
+
+const accountDropdown = [
+  {
+    id: 1,
+    name: 'Fees Group',
+    link: '#',
+  },
+  {
+    id: 2,
+    name: 'Student Fees',
+    link: '#',
+  },
+  {
+    id: 3,
+    name: 'Expenses',
+    link: '#',
+  },
+  {
+    id: 4,
+    name: 'Add Expenses',
+    link: '#',
+  }
+]
+
 
 const Menu = ({ MenuList }) => {
+  const [isStudentOpen, setIsStudentOpen] = useState(false);
+  const [isTeacherOpen, setIsTeacherOpen] = useState(false);
+  const [isAccountOpen, setIsAccountOpen] = useState(false);
+  const [selectedItem, setSelectedItem] = useState('');
+
+  const router = useRouter()
+
+  const studentAnimation = useSpring({
+    height: isStudentOpen ? '12.25rem' : '0rem',
+    opacity: isStudentOpen ? 1 : 0,
+    overflow: 'hidden',
+    config: { duration: 150 },
+  });
+
+  const teacherAnimation = useSpring({
+    height: isTeacherOpen ? '8.375rem' : '0rem',
+    opacity: isTeacherOpen ? 1 : 0,
+    overflow: 'hidden',
+    config: { duration: 150 },
+  });
+
+  const accountAnimation = useSpring({
+    height: isAccountOpen ? '16.125rem' : '0rem',
+    opacity: isAccountOpen ? 1 : 0,
+    overflow: 'hidden',
+    config: { duration: 150 },
+  });
+
+  const handleItemSelect = (item) => {
+    setSelectedItem(item);
+    router.push(item.link);
+  }
+
+  const handleDropdown = (itemName) => {
+     if (itemName === 'Student') {
+      setIsStudentOpen(!isStudentOpen);
+     }
+     if (itemName === 'Teachers') {
+      setIsTeacherOpen(!isTeacherOpen);
+     }
+     if (itemName === 'Account') {
+      setIsAccountOpen(!isAccountOpen);
+     }
+  }
+
   return (
     <div className='w-[386px] flex flex-col'>
         {/* top red component */}
@@ -102,8 +124,9 @@ const Menu = ({ MenuList }) => {
        {/* bottom blue component */}
        <div className='w-[100%] flex-1 bg-blue'>
        { MenuList.map((item) => (
-        <div className='shadow-custom-bottom h-[77px]' key={item.id}>
-         <Link href={item.link}>
+        <div className='h-auto'>
+        <div className='shadow-custom-bottom h-[77px]' key={item.id} onClick={() => handleDropdown(item.name)}>
+         <Link href={item.link} onClick={(e) => (item.name === 'Account' || item.name === 'Students' || item.name === 'Teachers') && e.preventDefault()}>
          <div className='flex items-center h-[100%]
          px-[21px]'>
           <div className='flex items-center'>
@@ -113,12 +136,79 @@ const Menu = ({ MenuList }) => {
           </div>
           <p className='text-white text-[1.125rem] font-[600] leading-[27px] font-poppins ml-[0.85rem]'>{item.name}</p>
           </div>
-
-          {item.icon && <Image src={item.icon} alt='chevron' className='w-[17.41px] h-[12px] cursor-pointer ml-auto' />}
+          {
+          item.icon && <Image src={item.icon} alt='chevron' className='w-[17.41px] h-[12px] cursor-pointer ml-auto' />
+          }            
           </div>
-          </Link>
+          </Link>         
+        </div>
+
+        {/* Teacher dropdown menu */}
+        <div>
+             {item.name === 'Teachers' && (
+               <animated.div style={teacherAnimation} className="w-[100%]h-auto">
+               <ul className='h-auto w-[100%] bg-[#263AC3] flex flex-col justify-between gap-[10px] py-[10px]'>
+                 {
+                 teacherDropdown.map((item) => (
+                   <li
+                     key={item.id}
+                     className={`h-[52px] text-[18px] font-poppins leading-[27px] cursor-pointer flex items-center pl-[30px] ${selectedItem === item ? 'bg-blue text-white font-[600]' : 'bg-[#263AC3] text-white/80 font-[400]'}`}
+                     onClick={() => handleItemSelect(item)}
+                   >
+                    <Image src={chevron} alt='chevron' className='w-[12px] h-[12px] cursor-pointer -rotate-90' />
+                    <p className='ml-[9px]'> {item.name}</p>
+                   </li>
+                 ))}
+             </ul>
+            </animated.div>
+             )}
+          </div>
+
+        {/* student dropdown menu */}
+        <div>
+             {item.name === 'Student' && (
+               <animated.div style={studentAnimation} className="w-[100%]h-auto">
+               <ul className='h-auto w-[100%] bg-[#263AC3] flex flex-col justify-between gap-[10px] py-[10px]'>
+                 {
+                 studentDropdown.map((item) => (
+                   <li
+                     key={item.id}
+                     className={`h-[52px] text-[18px] font-poppins leading-[27px] cursor-pointer flex items-center pl-[30px] ${selectedItem === item ? 'bg-blue text-white font-[600]' : 'bg-[#263AC3] text-white/80 font-[400]'}`}
+                     onClick={() => handleItemSelect(item)}
+                   >
+                    <Image src={chevron} alt='chevron' className='w-[12px] h-[12px] cursor-pointer -rotate-90' />
+                    <p className='ml-[9px]'> {item.name}</p>
+                   </li>
+                 ))}
+             </ul>
+            </animated.div>
+             )}
+          </div>
+
+          {/* account dropdown menu */}
+        <div>
+             {item.name === 'Account' && (
+               <animated.div style={accountAnimation} className="w-[100%]h-auto">
+               <ul className='h-auto w-[100%] bg-[#263AC3] flex flex-col justify-between gap-[10px] py-[10px]'>
+                 {
+                 accountDropdown.map((item) => (
+                   <li
+                     key={item.id}
+                     className={`h-[52px] text-[18px] font-poppins leading-[27px] cursor-pointer flex items-center pl-[30px] ${selectedItem === item ? 'bg-blue text-white font-[600]' : 'bg-[#263AC3] text-white/80 font-[400]'}`}
+                     onClick={() => handleItemSelect(item)}
+                   >
+                    <Image src={chevron} alt='chevron' className='w-[12px] h-[12px] cursor-pointer -rotate-90' />
+                    <p className='ml-[9px]'> {item.name}</p>
+                   </li>
+                 ))}
+             </ul>
+            </animated.div>
+             )}
+          </div>
+
         </div>
        ))}
+
        </div>
     </div>
   )

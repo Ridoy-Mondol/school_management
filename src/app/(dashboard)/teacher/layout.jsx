@@ -74,7 +74,7 @@ const MenuList = [
         name: 'Account',
         image: accountIcon,
         icon: chevron,
-        link: '#',
+        link: '',
     },
     {
         id: 11,

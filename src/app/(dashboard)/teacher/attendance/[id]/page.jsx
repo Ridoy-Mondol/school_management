@@ -42,9 +42,9 @@ const AttendanceSheet = ({params}) => {
        <div className='w-[100%] h-[328px] bg-[#DDDEEE] p-[20px] mt-[7.5px] flex flex-col justify-between'>
 
         <div className='h-[57px] pl-[15px] pr-[6rem] border-[1px] border-dark flex items-center justify-between'>
-            <p className='font-[600] font-openSans text-[20px] leading-[27.24px] text-dark'>Student Name</p>
-            <p className='font-[600] font-openSans text-[20px] leading-[27.24px] text-dark'>Present</p>
-            <p className='font-[600] font-openSans text-[20px] leading-[27.24px] text-dark'>Absent</p>
+            <p className='font-[600] font-openSans text-[20px] leading-[27.24px] text-dark w-[33%]'>Student Name</p>
+            <p className='font-[600] font-openSans text-[20px] leading-[27.24px] text-dark w-[33%] text-center'>Present</p>
+            <p className='font-[600] font-openSans text-[20px] leading-[27.24px] text-dark w-[33%] text-center'>Absent</p>
         </div>
 
         <div>
@@ -52,13 +52,13 @@ const AttendanceSheet = ({params}) => {
                 studentList.map((item) => (
                     <div className='bg-[#F1F1F1] h-[57px] mt-[18px] flex items-center justify-between pl-[15px] pr-[6.5rem]' key={item.id}>
                        <p className='font-[600] font-openSans text-[20px] leading-[27.24px] text-dark w-[33%]'>{item.name}</p>
-                       <div className='w-[33%]'>
+                       <div className='w-[33%] text-center'>
                        <input
                         type="checkbox"
-                        className='w-[18px] h-[18px] border-black border-[2px] rounded-[3px] cursor-pointer ml-[55%]'
+                        className='w-[18px] h-[18px] border-black border-[2px] rounded-[3px] cursor-pointer'
                         />
                        </div>
-                       <div className='w-[33%] text-end'>
+                       <div className='w-[33%] text-center'>
                        <input
                         type="checkbox"
                         className='w-[18px] h-[18px] border-black border-[2px] rounded-[3px] cursor-pointer'

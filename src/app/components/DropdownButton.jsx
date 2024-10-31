@@ -47,7 +47,6 @@ const DropdownButton = ({ text, data, CalendarComponent }) => {
        <div className='w-[100%]'>
         {open && CalendarComponent}
        </div>
-
     </div>
   )
 }
