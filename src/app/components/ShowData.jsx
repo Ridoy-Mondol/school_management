@@ -398,7 +398,7 @@ const ShowData = (props) => {
     }
 
     return (
-        <div className='bg-white shadow-[0px_4px_10px_0px_rgba(0,0,0,0.1)] w-[100%] p-[20px] mt-[40px]'>
+        <div className='bg-white shadow-[0px_4px_10px_0px_rgba(0,0,0,0.1)] w-[100%] p-[20px] mt-[40px] rounded-[10px]'>
             <h1 className='text-dark font-[400] font-poppins text-[28px] leading-[42px]'>{props.title}</h1>
 
             <form className='flex items-center justify-between mt-[15px]'>

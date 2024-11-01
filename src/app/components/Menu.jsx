@@ -37,7 +37,7 @@ const studentDropdown = [
   {
     id: 3,
     name: 'Students Promotion',
-    link: '/teacher/studentpromotion',
+    link: '/teacher/student_promotion',
   }
 ]
 
@@ -124,8 +124,8 @@ const Menu = ({ MenuList }) => {
        {/* bottom blue component */}
        <div className='w-[100%] flex-1 bg-blue'>
        { MenuList.map((item) => (
-        <div className='h-auto'>
-        <div className='shadow-custom-bottom h-[77px]' key={item.id} onClick={() => handleDropdown(item.name)}>
+        <div className='h-auto' key={item.id}>
+        <div className='shadow-custom-bottom h-[77px]' onClick={() => handleDropdown(item.name)}>
          <Link href={item.link} onClick={(e) => (item.name === 'Account' || item.name === 'Students' || item.name === 'Teachers') && e.preventDefault()}>
          <div className='flex items-center h-[100%]
          px-[21px]'>
