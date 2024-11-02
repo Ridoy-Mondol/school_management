@@ -9,17 +9,17 @@ const data = [
     {
         id: 1,
         img: resultImg,
-        title: '1st Semeter Result.pdf'
+        title: 'Bangla book.pdf'
     },
     {
         id: 2,
         img: resultImg,
-        title: '2nd Semeter Result.pdf'
+        title: 'English book.pdf'
     },
     {
         id: 3,
         img: resultImg,
-        title: '#3rd Semeter Result.pdf'
+        title: 'Math book.pdf'
     },
 ]
 const Material = () => {
