@@ -17,17 +17,7 @@ const studentList = [
     },
 ];
 
-
-export async function generateStaticParams() {
-    const students = studentList;
-
-    return students.map((student) => ({
-        id: student.id.toString(),
-    }));
-}
-
-const AttendanceSheet = ({params}) => {
-    const { id } = params;
+const AttendanceSheet = () => {
   return (
     <div className='h-[100vh] w-[100%] pr-[40px]'>
 

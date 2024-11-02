@@ -131,7 +131,7 @@ const Attendance = () => {
         </div>
         {
         (classItem && sectionItem && subItem) &&
-        <Link href='/teacher/attendance/1'>
+        <Link href='/teacher/attendance/attendance_sheet'>
         <button className='bg-[#0C46C4] w-[100%] h-[51.67px] rounded-[16px] text-white text-[1.5rem] font-[700] font-montserrat leading-[29.26px] mt-[2rem]'>Go</button>
         </Link>
         }

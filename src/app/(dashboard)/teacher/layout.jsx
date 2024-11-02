@@ -2,6 +2,7 @@ import Menu from "@/app/components/Menu";
 import TeacherIcon from '@/app/assets/user.svg'
 import dashboardIcon from '@/app/assets/dashboard.svg'
 import studentIcon from '@/app/assets/student.svg'
+import parentIcon from '@/app/assets/parentIcon.svg'
 import attendanceIcon from '@/app/assets/attendance.svg'
 import homeworkIcon from '@/app/assets/Homework.svg'
 import solutionIcon from '@/app/assets/solution.svg'
@@ -32,6 +33,12 @@ const MenuList = [
         image: studentIcon,
         icon: chevron,
         link: '#',
+    },
+    {
+        id: 3,
+        name: 'Parents',
+        image: parentIcon,
+        link: '/teacher/parents',
     },
     {
         id: 4,

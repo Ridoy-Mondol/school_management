@@ -11,7 +11,12 @@ const CalendarComponent = () => {
 
   return (
     <div className='w-[100%]'>
-      <Calendar onChange={handleDateChange} value={date} />
+      <Calendar 
+        onChange={handleDateChange} 
+        value={date}
+        next2Label={null}
+        prev2Label={null}
+        />
     </div>
   );
 };
